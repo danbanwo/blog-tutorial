@@ -27,6 +27,22 @@ router.route('/api/comments')
     res.send('comment was created')
   )
 })
-
+router.route('/api/comments/:id')
+  .put((req, res) => {
+    var data = req.body
+    var id = req.params.id
+    Comment.update({
+      comment: data.comment,
+      user: data.user
+    }, {where: {id: id}}).then(
+      res.send('comment was updated')
+    )
+  })
+  .delete((req, res) => {
+    var data = req.body
+    var id = req.params.id
+    Comment.destroy({where: {id: id}})
+    .then(res.send('comment was deleted'))
+  })
 
 module.exports = router
