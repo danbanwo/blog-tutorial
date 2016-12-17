@@ -4,7 +4,7 @@ var sequelize = require('sequelize');
 var db = require('./db');
 var bodyParser = require('body-parser');
 //importing router with a instance of express
-var router = require('./routes/route-comments')
+var router = require('./routes/route-users')
 var app = express();
 
 //imposting all models from the index.js

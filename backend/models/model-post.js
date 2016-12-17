@@ -7,4 +7,5 @@ var Post = db.define('post', {
 })
 
 Post.sync({});
+
 module.exports = Post;
